@@ -67,7 +67,7 @@ if uploaded_file is not None:
         st.title("Most Active Days")
         daily_count = helper.daily_count(selected_user,df)
         fig,ax = plt.subplots()
-        ax.bar(daily_count['index'],daily_count['day_name'],color="red")
+        ax.bar(daily_count.index,daily_count.values,color="red")
         plt.xlabel("Day")
         plt.ylabel("Number of messages")
         plt.xticks(rotation=90)

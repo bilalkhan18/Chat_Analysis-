@@ -92,9 +92,9 @@ def daily_count(selected_user,df):
         if selected_user != "Overall":
             df = df[df['user']==selected_user]
 
-        df['day_name'] = df['date'].dt.day_name()    
-        daily_count_df = df["day_name"].value_counts().reset_index()
-        return daily_count_df
+          
+        
+        return df['day_name'].value_counts()
 
 def monthly_count(selected_user,df):
         if selected_user != "Overall":
