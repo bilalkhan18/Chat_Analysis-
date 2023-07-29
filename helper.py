@@ -4,6 +4,7 @@ from collections import Counter
 import emoji
 import pandas as pd
 import nltk
+nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer 
 def fetch_stats(selected_user,df):
     
