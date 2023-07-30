@@ -6,7 +6,8 @@ def preprocess(data):
     message = re.split(pattern,data)
     dates = re.findall(pattern,data)
 
-    message.pop(0)
+    if(message[0]==""):
+        message.remove("")
     
     df = pd.DataFrame({'user_message':message, 'message_date':dates})
 
