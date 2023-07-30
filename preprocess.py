@@ -6,7 +6,7 @@ def preprocess(data):
     message = re.split(pattern,data)
     dates = re.findall(pattern,data)
 
-    message.remove("")
+    
     df = pd.DataFrame({'user_message':message, 'message_date':dates})
 
     df["message_date"] = pd.to_datetime(df["message_date"],format="[%d/%m/%y, %I:%M:%S %p]")
