@@ -6,9 +6,13 @@ def preprocess(data):
     message = re.split(pattern,data)
     dates = re.findall(pattern,data)
 
-    if(message[0]==""):
+    try:
         message.remove("")
     
+    except ValueError:
+        print("Please enter file in AM/PM format")
+    
+
     df = pd.DataFrame({'user_message':message, 'message_date':dates})
 
     df["message_date"] = pd.to_datetime(df["message_date"],format="[%d/%m/%y, %I:%M:%S %p]")

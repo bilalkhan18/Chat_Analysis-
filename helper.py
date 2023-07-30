@@ -110,7 +110,7 @@ def calc_sentiment(selected_user,df):
     sid = SentimentIntensityAnalyzer()
     df['scores'] = df['message'].apply(lambda message: sid.polarity_scores(message))
     df['compound']  = df['scores'].apply(lambda score_dict: score_dict['compound'])
-    return round(df['compound'].sum(),2)
+    return round((df['compound'].sum()/df.shape[0])*100,2)
 
 
 
